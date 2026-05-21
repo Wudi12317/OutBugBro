@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3 uid="uid://56e4tg5bwxyv"]
+
+[ext_resource type="Script" uid="uid://bqwtl26l3d11" path="res://core/base/effect_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://djwivgiiodc6p" path="res://assets/sprites/effects/speed_up.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "speed_30"
+icon = ExtResource("2")
+fire_rate_change = 1.0

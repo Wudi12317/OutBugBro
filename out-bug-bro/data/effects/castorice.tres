@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3 uid="uid://ccx14q33q4y5x"]
+
+[ext_resource type="Texture2D" uid="uid://tvuoejdob3w3" path="res://assets/sprites/items/castorice1.png" id="1_vwvou"]
+[ext_resource type="Script" uid="uid://bqwtl26l3d11" path="res://core/base/effect_data.gd" id="2_un7f6"]
+
+[resource]
+script = ExtResource("2_un7f6")
+id = "castorice"
+icon = ExtResource("1_vwvou")
+heal_amount = 500.0
+hp_change = 500.0
+fire_rate_change = 10.0
+damage_change = 99.0
+damage_mult_change = 2.0
+crit_rate_change = 1.0
+crit_damage_change = 3.0
+defense_change = 99999.0

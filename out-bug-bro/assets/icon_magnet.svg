@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- 磁力牵引图标：磁铁+箭头 -->
+  <path d="M8 16 A8 8 0 0 1 24 16" fill="none" stroke="#ab47bc" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 16 A8 8 0 0 0 24 16" fill="none" stroke="#ce93d8" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="24,10 28,16 24,22" fill="#e1bee7"/>
+  <line x1="4" y1="16" x2="20" y2="16" stroke="#ab47bc" stroke-width="2"/>
+  <circle cx="10" cy="12" r="2" fill="#e1bee7"/>
+  <circle cx="10" cy="20" r="2" fill="#e1bee7"/>
+</svg>

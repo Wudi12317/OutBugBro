@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EffectData" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://by7c2y8rpn3hi" path="res://core/base/effect_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "emergency_buff"
+damage_change = 100.0
+damage_mult_change = 1.0
+crit_rate_change = 0.5
+crit_damage_change = 1.0
+defense_change = 30.0

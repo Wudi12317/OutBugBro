@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://dgax0085slsca"]
+
+[ext_resource type="Script" uid="uid://caicm6bgtluvg" path="res://core/base/skill_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c2b8u6fshcxq6" path="res://assets/skill_shield.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "shield"
+skill_name = "临时护盾"
+desc = "5秒内免疫所有伤害"
+icon = ExtResource("2")
+unlock_wave = 3
+cost = 1000
+duration = 10.0

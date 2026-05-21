@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/base/skill_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/icon_magnet.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "magnet"
+skill_name = "磁力牵引"
+desc = "蓄力时间减半，附近敌人朝射击方向偏移10度集中"
+icon = ExtResource("2")
+unlock_wave = 8
+cost = 5000
+cooldown = 30.0
+duration = 15.0
+key_index = 6

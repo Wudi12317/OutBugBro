@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" load_steps=3 format=3 uid="uid://d4jrivcn6flxc"]
+
+[ext_resource type="Script" uid="uid://cd8gus116t6f5" path="res://core/base/consumable_item_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b5i3plcitbfhk" path="res://assets/sprites/items/speed_potion.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "speed_potion"
+name = "速度药剂"
+icon = ExtResource("2")
+desc = "风之精华，提升30%射速"
+rarity = 2
+value = 99
+effect_ids = PackedStringArray("speed_30")

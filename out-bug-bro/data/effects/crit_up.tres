@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3 uid="uid://cwv7gfsnmvdsr"]
+
+[ext_resource type="Script" uid="uid://bqwtl26l3d11" path="res://core/base/effect_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://clkgbbqn2ciix" path="res://assets/sprites/effects/crit_up.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "crit_up"
+icon = ExtResource("2")
+crit_rate_change = 0.3
+crit_damage_change = 0.6

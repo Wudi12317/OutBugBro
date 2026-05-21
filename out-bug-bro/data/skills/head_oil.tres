@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/base/skill_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/skill_head_oil.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "head_oil"
+skill_name = "头油"
+desc = "弹开附近敌人并减速15%"
+icon = ExtResource("2")
+unlock_wave = 1
+cost = 0
+cooldown = 30.0
+duration = 5.0
+key_index = 4

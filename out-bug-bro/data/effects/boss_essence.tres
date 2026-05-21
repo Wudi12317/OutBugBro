@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EffectData" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://dcgbfh2h2hqry" path="res://assets/sprites/items/heart.png" id="1_icon"]
+[ext_resource type="Script" uid="uid://bqwtl26l3d11" path="res://core/base/effect_data.gd" id="2_script"]
+
+[resource]
+script = ExtResource("2_script")
+id = "boss_essence_effect"
+icon = ExtResource("1_icon")
+heal_amount = 1000.0
+hp_change = 500.0
+fire_rate_change = 15.0
+damage_change = 80.0
+damage_mult_change = 3.0
+crit_rate_change = 0.50
+crit_damage_change = 2.0
+defense_change = 30.0
+move_speed_change = 50.0

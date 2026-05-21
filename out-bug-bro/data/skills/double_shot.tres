@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/base/skill_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/icon_double_shot.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "double_shot"
+skill_name = "双发射击"
+desc = "蓄力弹和普通弹双发，持续60秒"
+icon = ExtResource("2")
+unlock_wave = 10
+cost = 10000
+cooldown = 60.0
+duration = 60.0
+key_index = 5

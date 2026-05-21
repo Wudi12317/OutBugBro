@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/world/drop_indicator.gd" id="1"]
+
+[node name="DropIndicator" type="Node2D"]
+script = ExtResource("1")
+
+[node name="GoldLabel" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -30.0
+offset_right = 25.0
+offset_bottom = -16.0
+horizontal_alignment = 1
+mouse_filter = 2
+
+[node name="ItemLabel" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -48.0
+offset_right = 25.0
+offset_bottom = -34.0
+horizontal_alignment = 1
+mouse_filter = 2

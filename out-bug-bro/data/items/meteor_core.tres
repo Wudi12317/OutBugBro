@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MaterialItemData" load_steps=3 format=3 uid="uid://c0ox2xyc2w65i"]
+
+[ext_resource type="Script" uid="uid://7p8pbircrjt5" path="res://core/base/material_item_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cyc1ek76vihsl" path="res://assets/sprites/items/whb.png" id="1_qunwk"]
+
+[resource]
+script = ExtResource("1")
+id = "meteor_core"
+name = "油头"
+icon = ExtResource("1_qunwk")
+desc = "王浩博的大油头，价格不菲"
+rarity = 4
+value = 3000

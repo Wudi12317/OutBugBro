@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- 陨星核 — 传说品质材料 -->
+  <defs>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#FF8C00" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#4B0082" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="16" cy="16" r="15" fill="url(#glow3)"/>
+  <polygon points="16,3 19,12 28,12 21,18 24,28 16,22 8,28 11,18 4,12 13,12" fill="#4B0082" stroke="#FFD700" stroke-width="1.5"/>
+  <circle cx="16" cy="16" r="4" fill="#FFD700"/>
+</svg>

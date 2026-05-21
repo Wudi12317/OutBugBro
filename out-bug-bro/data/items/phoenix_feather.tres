@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" load_steps=3 format=3 uid="uid://cvx7x05mt0ta5"]
+
+[ext_resource type="Script" uid="uid://cd8gus116t6f5" path="res://core/base/consumable_item_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dg3670cg82xvj" path="res://assets/sprites/items/phoenix_feather.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+effect_ids = ["phoenix_revive"]
+effect_duration = 20.0
+id = "phoenix_feather"
+name = "郑斌的鸡毛"
+icon = ExtResource("2")
+desc = "（我实在没贴图了）大量回血并增加血量上限与防御"
+rarity = 4
+value = 1500

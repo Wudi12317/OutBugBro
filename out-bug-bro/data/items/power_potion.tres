@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/base/consumable_item_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/items/health_potion.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "power_potion"
+name = "力量药水"
+icon = ExtResource("2")
+desc = "注入战神之力，大幅提升攻击伤害"
+rarity = 2
+value = 150
+effect_ids = PackedStringArray("power_boost")
+effect_duration = 15.0

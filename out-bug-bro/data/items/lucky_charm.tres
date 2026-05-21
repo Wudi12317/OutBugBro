@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" load_steps=3 format=3 uid="uid://cvm3wv0mx65kc"]
+
+[ext_resource type="Script" uid="uid://cd8gus116t6f5" path="res://core/base/consumable_item_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dmfyfgyfr6wl8" path="res://assets/sprites/items/ancient_coin.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+effect_ids = ["lucky_aura"]
+effect_duration = 15.0
+id = "lucky_charm"
+name = "幸运符"
+icon = ExtResource("2")
+desc = "暴击率与暴击伤害大幅提升"
+rarity = 3
+value = 300

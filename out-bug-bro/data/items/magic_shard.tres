@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MaterialItemData" load_steps=3 format=3 uid="uid://bca50e5u6nu4y"]
+
+[ext_resource type="Script" uid="uid://7p8pbircrjt5" path="res://core/base/material_item_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bc1c11w1kxfga" path="res://assets/sprites/items/magic_shard.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "magic_shard"
+name = "魔法碎片"
+icon = ExtResource("2")
+desc = "有较高价值"
+rarity = 3
+value = 600

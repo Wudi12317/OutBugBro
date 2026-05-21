@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/base/skill_data.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/skill_repair.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "repair"
+skill_name = "应急修理"
+desc = "血量恢复至90%，10秒极大增幅"
+icon = ExtResource("2")
+unlock_wave = 10
+cost = 4500
+cooldown = 120.0
+duration = 10.0
+key_index = 2

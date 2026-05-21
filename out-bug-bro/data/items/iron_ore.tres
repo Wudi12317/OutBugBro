@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MaterialItemData" load_steps=3 format=3 uid="uid://b3qon85hp7y22"]
+
+[ext_resource type="Script" uid="uid://7p8pbircrjt5" path="res://core/base/material_item_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dorn30yagrlo4" path="res://assets/sprites/items/iron_ore.svg" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "iron_ore"
+name = "铁矿石"
+icon = ExtResource("2")
+desc = "坚硬的铁矿，锻造的基础材料"
+value = 40
+type = 1

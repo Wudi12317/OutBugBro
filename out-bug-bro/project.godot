@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="OutBugBro"
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.5", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+EventBus="*res://core/autoload/event_bus.gd"
+GameManager="*res://core/autoload/game_manager.gd"
+InventoryManager="*res://core/autoload/inventory_manager.gd"
+EffectManager="*res://core/autoload/effect_manager.gd"
+CurrencyManager="*res://core/autoload/currency_manager.gd"
+ComboManager="*res://core/autoload/combo_manager.gd"
+SkillManager="*res://core/autoload/skill_manager.gd"
+SaveManager="*res://core/autoload/save_manager.gd"
+
+[rendering]
+
+renderer/rendering_method="mobile"

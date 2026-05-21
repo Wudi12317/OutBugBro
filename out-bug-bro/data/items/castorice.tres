@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" load_steps=3 format=3 uid="uid://duicfs8xb5txk"]
+
+[ext_resource type="Texture2D" uid="uid://tvuoejdob3w3" path="res://assets/sprites/items/castorice1.png" id="1_do00n"]
+[ext_resource type="Script" uid="uid://cd8gus116t6f5" path="res://core/base/consumable_item_data.gd" id="2_pdnd1"]
+
+[resource]
+script = ExtResource("2_pdnd1")
+effect_ids = ["castorice"]
+effect_duration = 30.0
+id = "castorice"
+name = "遐蝶"
+icon = ExtResource("1_do00n")
+desc = "大幅提升所有属性,关注遐蝶rz谢谢喵"
+rarity = 4
+value = 9999

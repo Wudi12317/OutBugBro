@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DataRegistry" load_steps=2 format=3 uid="uid://dpa2qtwt6nqya"]
+
+[ext_resource type="Script" uid="uid://ddwxpihn0g2p7" path="res://core/base/data_registry.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+item_paths = Array[String](["res://data/items/health_potion.tres", "res://data/items/speed_potion.tres", "res://data/items/power_potion.tres", "res://data/items/iron_wall_potion.tres", "res://data/items/lucky_charm.tres", "res://data/items/iron_ore.tres", "res://data/items/magic_shard.tres", "res://data/items/coin.tres", "res://data/items/dragon_heart.tres", "res://data/items/phoenix_feather.tres", "res://data/items/meteor_core.tres", "res://data/items/castorice.tres"])
+effect_paths = Array[String](["res://data/effects/heal_50.tres", "res://data/effects/speed_30.tres", "res://data/effects/power_up.tres", "res://data/effects/crit_up.tres", "res://data/effects/power_boost.tres", "res://data/effects/iron_wall.tres", "res://data/effects/lucky_aura.tres", "res://data/effects/emergency_buff.tres", "res://data/effects/phoenix_revive.tres", "res://data/effects/castorice.tres", "res://data/effects/boss_essence.tres"])
+skill_paths = Array[String](["res://data/skills/shield.tres", "res://data/skills/reflect.tres", "res://data/skills/repair.tres", "res://data/skills/missile.tres", "res://data/skills/head_oil.tres", "res://data/skills/magnet.tres", "res://data/skills/double_shot.tres"])

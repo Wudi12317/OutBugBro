@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" load_steps=3 format=3 uid="uid://b5vqjc72q4acq"]
+
+[ext_resource type="Script" uid="uid://cd8gus116t6f5" path="res://core/base/consumable_item_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bbdxg480kvnb7" path="res://assets/sprites/items/dragon_heart.svg" id="1_rsgnw"]
+
+[resource]
+script = ExtResource("1")
+effect_ids = ["iron_wall"]
+effect_duration = 12.0
+id = "iron_wall_potion"
+name = "铁壁药水"
+icon = ExtResource("1_rsgnw")
+desc = "钢铁般的意志，提升生命上限与防御"
+rarity = 2
+value = 180
