@@ -1,0 +1,125 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/ui/status_effect_bar.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://blb40affqku40" path="res://scenes/ui/inventory_ui.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ui/death_screen.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://thpb0001" path="res://scenes/ui/target_hp_bar.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/ui/stats_panel.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/ui/wave_display.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/ui/wave_announce.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/ui/combo_display.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/ui/skill_bar.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://bhpb0001" path="res://scenes/ui/boss_hp_bar.tscn" id="11"]
+[ext_resource type="Script" uid="uid://titji5mhq7u3" path="res://scenes/ui/dev_panel.gd" id="12"]
+[ext_resource type="Script" path="res://scenes/ui/game_hud.gd" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/ui/tutorial_overlay.tscn" id="14"]
+
+[node name="UILayer" type="CanvasLayer"]
+script = ExtResource("13")
+
+[node name="InventoryUi" parent="." instance=ExtResource("2")]
+
+[node name="StatusEffectBar" parent="." instance=ExtResource("1")]
+layout_mode = 1
+anchors_preset = 1
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TargetHpBar" parent="." instance=ExtResource("4")]
+
+[node name="DeathScreen" parent="." instance=ExtResource("3")]
+
+[node name="StatsPanel" parent="." instance=ExtResource("5")]
+anchors_preset = 3
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -202.0
+offset_right = 173.0
+offset_bottom = -10.0
+grow_vertical = 2
+
+[node name="WaveDisplay" parent="." instance=ExtResource("6")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 14.0
+offset_right = 143.0
+offset_bottom = 45.0
+grow_horizontal = 2
+
+[node name="WaveAnnounce" parent="." instance=ExtResource("7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -30.0
+offset_right = 200.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ComboDisplay" parent="." instance=ExtResource("8")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 209.0
+offset_top = 140.0
+offset_right = 349.0
+offset_bottom = 210.0
+grow_horizontal = 2
+
+[node name="SkillBar" parent="." instance=ExtResource("9")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -80.0
+offset_right = -8.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PauseMenu" parent="." instance=ExtResource("10")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 3.0
+offset_right = -1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BossHpBar" parent="." instance=ExtResource("11")]
+
+[node name="DevPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12")
+
+[node name="TutorialOverlay" parent="." instance=ExtResource("14")]
+visible = false

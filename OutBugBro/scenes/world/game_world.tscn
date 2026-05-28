@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" uid="uid://tx1mku5dwfn7" path="res://scenes/world/target.tscn" id="1"]
+[ext_resource type="Script" uid="uid://c8bmyyj3jfokm" path="res://scenes/world/enemy_spawner.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/world/arena_visual.gd" id="3"]
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="ArenaVisual" type="Node2D" parent="."]
+script = ExtResource("3")
+
+[node name="ArenaBackground" type="ColorRect" parent="ArenaVisual"]
+color = Color(0, 0, 0, 1)
+
+[node name="ArenaBorder" type="Line2D" parent="ArenaVisual"]
+width = 3.0
+default_color = Color(1, 1, 1, 0.35)
+
+[node name="Target" parent="." instance=ExtResource("1")]
+position = Vector2(577, 321)
+
+[node name="Camera2D" type="Camera2D" parent="Target" groups=["cameras"]]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("2")

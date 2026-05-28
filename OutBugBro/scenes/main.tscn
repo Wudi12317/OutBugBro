@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1bn38kq7y1qk"]
+
+[ext_resource type="PackedScene" path="res://scenes/world/game_world.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_hud.tscn" id="2"]
+
+[node name="Main" type="Node"]
+
+[node name="GameWorld" parent="." instance=ExtResource("1")]
+
+[node name="UILayer" parent="." instance=ExtResource("2")]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "冷知识：shift可以切换射击模式
+详情在介绍里面看"

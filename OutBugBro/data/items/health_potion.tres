@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ConsumableItemData" load_steps=3 format=3 uid="uid://br3ksyhjypkfp"]
+
+[ext_resource type="Script" uid="uid://cd8gus116t6f5" path="res://core/base/consumable_item_data.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dcgbfh2h2hqry" path="res://assets/sprites/items/heart.png" id="1_dvv3t"]
+
+[resource]
+script = ExtResource("1")
+effect_ids = ["heal_50"]
+id = "health_potion"
+name = "生命药水"
+icon = ExtResource("1_dvv3t")
+desc = "注入生命的红色液体，恢复100点生命值"
+rarity = 2
+value = 30

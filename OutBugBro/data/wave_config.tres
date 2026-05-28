@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WaveConfig" load_steps=2 format=3 uid="uid://bonyylbewjgy3"]
+
+[ext_resource type="Script" uid="uid://cet3peptse1pe" path="res://core/base/wave_config.gd" id="1_"]
+
+[resource]
+script = ExtResource("1_")
+enemy_hp_level_mult = 1.08
+enemy_atk_easy = 0.3
+enemy_atk_mid = 0.8
+enemy_atk_hard = 1.2
+enemy_speed_easy = 3.0
+enemy_speed_mid = 5.0
+enemy_speed_hard = 7.0
+enemy_interval_easy = 0.04
+enemy_interval_mid = 0.1
+enemy_interval_hard = 0.15
+enemy_atk_extreme = 1.8
+enemy_speed_extreme = 10.0
+enemy_interval_extreme = 0.25
+drop_base_chance = 0.45
+drop_per_wave = 0.025
+drop_cap = 0.9
