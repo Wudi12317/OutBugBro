@@ -5,6 +5,7 @@ extends Node
 enum State { MENU, PLAYING, PAUSED }
 
 var state: State = State.MENU
+var challenge_mode: bool = false  ## 挑战模式：仅允许技能1(shield)和Q(head_oil)，自动解锁
 
 
 func _ready() -> void:
@@ -36,7 +37,7 @@ func _setup_tooltip_theme() -> void:
 	panel.bg_color = Color(0.08, 0.08, 0.15, 0.92)
 	panel.border_color = Color(0.35, 0.35, 0.5, 0.7)
 	panel.set_border_width_all(1)
-	panel.set_corner_radius_all(8)
+	panel.set_corner_radius_all(0)
 	panel.set_content_margin_all(8)
 	panel.shadow_color = Color(0, 0, 0, 0.3)
 	panel.shadow_offset = Vector2(2, 2)

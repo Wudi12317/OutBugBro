@@ -124,10 +124,10 @@ func _build_visual() -> void:
 	# 血条
 	var bg_style := StyleBoxFlat.new()
 	bg_style.bg_color = Color(0.2, 0.2, 0.25, 0.8)
-	bg_style.set_corner_radius_all(2)
+	bg_style.set_corner_radius_all(0)
 	var fill_style := StyleBoxFlat.new()
 	fill_style.bg_color = p.hp_fill_color
-	fill_style.set_corner_radius_all(2)
+	fill_style.set_corner_radius_all(0)
 	_hp_bar = ProgressBar.new()
 	_hp_bar.name = "HpBar"
 	_hp_bar.unique_name_in_owner = true

@@ -3,7 +3,7 @@
 ## 项目概况
 - **引擎**: Godot 4.5.1 (Mobile 渲染器)
 - **类型**: 2D 肉鸽/弹幕射击游戏（最终目标 PVP 在线多人）
-- **路径**: e:\HuaweiMoveData\Users\wudi1\Documents\out-bug-bro
+- **路径**: E:\HuaweiMoveData\Users\wudi1\Desktop\OutBugBro\OutBugBro
 - **工作区**: 中文 Windows，GDScript，数据驱动（.tres），组件化架构
 
 ## 核心架构
@@ -17,7 +17,7 @@
 core/autoload/     → 全局单例（EventBus/GameManager/InventoryManager/EffectManager/CurrencyManager/ComboManager/SkillManager/SaveManager/MetaProgression/UITheme）
 core/base/         → 基类（Component/ItemData/EffectData/DropTable/DropEntry/SkillData/PlayerConfig/WaveConfig）
 core/components/   → 组件（HealthComponent/ShootingComponent/MoveComponent/AttackComponent/PlayerStats/TrailComponent/DashComponent）
-core/ui_theme.gd   → iOS 暗色风格统一工具（半透明+12px圆角+赛博朋克边框）
+core/ui_theme.gd   → iOS 暗色风格统一工具（半透明+直角+赛博朋克边框）
 data/              → .tres 数据资源（items/effects/skills/drop_tables/wave_config）
 scenes/world/      → 世界（target/bullet/enemy_bullet/enemy_spawner/explosion_effect/game_world）
 scenes/enemies/    → 敌人（enemy_a/fast_enemy/tank_enemy/ranged_enemy/boss + AI行为多样性）

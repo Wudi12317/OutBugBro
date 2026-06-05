@@ -1,4 +1,4 @@
-## Boss 血条 UI — 屏幕顶部，红底
+## Boss 血条 UI — 屏幕顶部，动态红色 + 扣血延迟条 + 低血脉冲
 ## 使用 boss_hp_bar.tscn 场景节点，不再程序化构建
 extends MarginContainer
 
@@ -9,10 +9,10 @@ extends MarginContainer
 
 var _prev_hp: int = -1
 var _damage_tween: Tween = null
+var _pulse_time: float = 0.0
 
 
 func _ready() -> void:
-	# 如果 .tscn 未提供节点，回退程序化构建
 	if not _bar:
 		_build_fallback()
 	visible = false
@@ -21,7 +21,30 @@ func _ready() -> void:
 	EventBus.listen("boss_died", _on_boss_died)
 
 
-## 程序化构建回退（当 .tscn 节点不存在时）
+func _process(delta: float) -> void:
+	# 低血脉冲
+	if visible and _bar and _bar.max_value > 0:
+		var ratio := _bar.value / _bar.max_value
+		if ratio < 0.2:
+			_pulse_time += delta * 6.0
+			var pulse := 0.5 + 0.5 * sin(_pulse_time)
+			_bar.modulate = Color(1.0, 0.3 + 0.7 * pulse, 0.3 + 0.7 * pulse, 1.0)
+		else:
+			_pulse_time = 0.0
+			_bar.modulate = Color.WHITE
+
+
+## 根据血量比例返回Boss血条颜色
+func _boss_color(ratio: float) -> Color:
+	if ratio > 0.5:
+		return Color(0.9, 0.18, 0.18, 1.0)    # 亮红
+	elif ratio > 0.2:
+		return Color(0.75, 0.1, 0.08, 1.0)     # 暗红
+	else:
+		return Color(0.55, 0.05, 0.05, 1.0)    # 深红
+
+
+## 程序化构建回退
 func _build_fallback() -> void:
 	anchor_left = 0.2
 	anchor_top = 0.0
@@ -46,6 +69,7 @@ func _build_fallback() -> void:
 	vbox.add_child(_name_label)
 
 	var bar_container := Control.new()
+	bar_container.name = "BarContainer"
 	bar_container.custom_minimum_size = Vector2(0, 28)
 	bar_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	vbox.add_child(bar_container)
@@ -85,7 +109,7 @@ func _build_fallback() -> void:
 func _make_style(color: Color) -> StyleBoxFlat:
 	var s := StyleBoxFlat.new()
 	s.bg_color = color
-	s.set_corner_radius_all(4)
+	s.set_corner_radius_all(0)
 	return s
 
 
@@ -97,6 +121,7 @@ func _on_boss_spawned(data: Variant) -> void:
 		_damage_bar.max_value = float(data.max_hp)
 		_damage_bar.value = float(data.hp)
 		_prev_hp = int(data.hp)
+		_update_bar_color()
 		_update_label(int(data.hp), int(data.max_hp))
 
 
@@ -106,10 +131,18 @@ func _on_hp_changed(data: Variant) -> void:
 		var max_hp: int = int(data.max_hp)
 		_bar.max_value = float(max_hp)
 		_bar.value = float(hp)
+		_update_bar_color()
 		_update_label(hp, max_hp)
 		if _prev_hp >= 0 and hp < _prev_hp:
 			_on_damage(float(_prev_hp), float(max_hp))
 		_prev_hp = hp
+
+
+func _update_bar_color() -> void:
+	var ratio := _bar.value / _bar.max_value if _bar.max_value > 0 else 1.0
+	var fill: StyleBoxFlat = _bar.get_theme_stylebox("fill").duplicate()
+	fill.bg_color = _boss_color(ratio)
+	_bar.add_theme_stylebox_override("fill", fill)
 
 
 func _on_boss_died(_data: Variant = null) -> void:
@@ -129,4 +162,5 @@ func _on_damage(old_val: float, max_val: float) -> void:
 
 
 func _update_label(hp: int, max_hp: int) -> void:
-	_label.text = "%d / %d" % [hp, max_hp]
+	if _label:
+		_label.text = "%d / %d" % [hp, max_hp]

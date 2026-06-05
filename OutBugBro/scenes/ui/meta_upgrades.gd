@@ -147,8 +147,8 @@ func _make_panel_style() -> StyleBoxFlat:
 	sb.border_width_right = 1
 	sb.border_width_bottom = 1
 	sb.border_color = Color(0.3, 0.6, 1.0, 0.5)
-	sb.corner_radius_top_left = 12
-	sb.corner_radius_top_right = 12
-	sb.corner_radius_bottom_left = 12
-	sb.corner_radius_bottom_right = 12
+	sb.corner_radius_top_left = 0
+	sb.corner_radius_top_right = 0
+	sb.corner_radius_bottom_left = 0
+	sb.corner_radius_bottom_right = 0
 	return sb

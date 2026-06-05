@@ -203,3 +203,4 @@ func _get_sum(prop: String) -> float:
 func _ready() -> void:
 	super._ready()
 	EffectManager.changed.connect(func(): stats_changed.emit())
+	MetaProgression.upgraded.connect(func(_id: String): stats_changed.emit())

@@ -1,4 +1,4 @@
-# GameHUD — UI 层主脚本：教程管理 + F1 重看 + 位移 CD 显示 + Tab 升级面板
+# GameHUD — UI 层主脚本：教程管理 + F3 重看 + 位移 CD 显示 + Tab 升级面板
 extends CanvasLayer
 
 var _dash_label: Label = null
@@ -14,8 +14,8 @@ func _ready() -> void:
 	_create_upgrade_ui()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and event.keycode == KEY_F1:
-		# F1 重看教程
+	if event is InputEventKey and event.pressed and event.keycode == KEY_F3:
+		# F3 重看教程
 		var overlay = get_node_or_null("TutorialOverlay")
 		if overlay and overlay.has_method("show_tutorial"):
 			overlay.show_tutorial()

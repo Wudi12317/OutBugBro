@@ -93,7 +93,7 @@ func _add_pulse(color: Color) -> void:
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color(color.r, color.g, color.b, 0.3)
-	style.set_corner_radius_all(12)
+	style.set_corner_radius_all(0)
 	panel.add_theme_stylebox_override("panel", style)
 	add_child(panel)
 	var tw := create_tween()

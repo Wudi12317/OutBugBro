@@ -7,6 +7,9 @@ signal skill_activated(skill_id: String)            ## 技能激活
 signal skill_expired(skill_id: String)              ## 效果到期
 signal skill_purchased(skill_id: String)            ## 购买成功
 
+## 挑战模式允许的技能ID
+const CHALLENGE_ALLOWED := ["shield", "head_oil"]
+
 var _skills: Array[SkillData] = []
 var _purchased: Dictionary = {}    ## id -> true
 var _cooldowns: Dictionary = {}    ## id -> remaining
@@ -55,6 +58,32 @@ func get_skills() -> Array[SkillData]:
 	return _skills
 
 
+## 挑战模式可见技能（仅允许的2个）
+func get_visible_skills() -> Array[SkillData]:
+	if GameManager.challenge_mode:
+		var result: Array[SkillData] = []
+		for s in _skills:
+			if s.id in CHALLENGE_ALLOWED:
+				result.append(s)
+		return result
+	return _skills
+
+
+## 挑战模式自动解锁允许的技能
+func auto_unlock_challenge_skills() -> void:
+	if not GameManager.challenge_mode:
+		return
+	for id in CHALLENGE_ALLOWED:
+		if not _purchased.has(id):
+			_purchased[id] = true
+	changed.emit()
+
+
+## 按ID激活（供Q键等快捷调用）
+func activate_by_id(id: String) -> bool:
+	return activate(id)
+
+
 ## 当前波次
 func _get_current_wave() -> int:
 	var spawners := get_tree().get_nodes_in_group("spawners")
@@ -68,11 +97,20 @@ func is_unlocked(id: String) -> bool:
 	return _purchased.has(id)
 
 
+## 挑战模式下是否允许使用该技能
+func is_allowed_in_challenge(id: String) -> bool:
+	if not GameManager.challenge_mode:
+		return true
+	return id in CHALLENGE_ALLOWED
+
+
 ## 是否可购买
 func can_purchase(id: String) -> bool:
 	var skill := _get_skill(id)
 	if not skill: return false
 	if is_unlocked(id): return false
+	if GameManager.challenge_mode and id not in CHALLENGE_ALLOWED:
+		return false
 	return _get_current_wave() >= skill.unlock_wave
 
 
@@ -81,6 +119,8 @@ func purchase(id: String) -> bool:
 	var skill := _get_skill(id)
 	if not skill: return false
 	if is_unlocked(id): return false
+	if GameManager.challenge_mode and id not in CHALLENGE_ALLOWED:
+		return false
 	if not CurrencyManager.has_enough(skill.cost): return false
 	CurrencyManager.spend(skill.cost)
 	_purchased[id] = true
@@ -91,7 +131,14 @@ func purchase(id: String) -> bool:
 
 ## 激活技能
 func activate(id: String) -> bool:
-	if not is_unlocked(id): return false
+	# 挑战模式允许的技能免解锁直接可用
+	if GameManager.challenge_mode and id in CHALLENGE_ALLOWED:
+		if not is_unlocked(id):
+			_purchased[id] = true
+	elif not is_unlocked(id):
+		return false
+	if GameManager.challenge_mode and id not in CHALLENGE_ALLOWED:
+		return false
 	if is_on_cooldown(id): return false
 	if is_active(id): return false
 	var skill := _get_skill(id)

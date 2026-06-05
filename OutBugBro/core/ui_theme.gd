@@ -2,7 +2,7 @@
 extends Node
 
 # 给任意 Control 节点应用 iOS 暗色风格
-static func apply_iOS_style(node: Control, extra_radius: int = 12) -> void:
+static func apply_iOS_style(node: Control, extra_radius: int = 0) -> void:
 	if not node:
 		return
 	# PanelContainer / Panel
@@ -43,7 +43,7 @@ static func _apply_button_style(btn: Button) -> void:
 	sb.border_width_right = 1
 	sb.border_width_bottom = 1
 	sb.border_color = Color(0.3, 0.6, 1.0, 0.35)
-	sb.set_corner_radius_all(8)
+	sb.set_corner_radius_all(0)
 	btn.add_theme_stylebox_override("normal", sb)
 	var hover := sb.duplicate() as StyleBoxFlat
 	hover.bg_color = Color(0.2, 0.2, 0.3, 0.95)
@@ -57,11 +57,11 @@ static func _apply_label_style(lbl: Label) -> void:
 static func _apply_progress_style(pb: ProgressBar) -> void:
 	var bg := StyleBoxFlat.new()
 	bg.bg_color = Color(0.15, 0.15, 0.2, 0.8)
-	bg.set_corner_radius_all(4)
+	bg.set_corner_radius_all(0)
 	pb.add_theme_stylebox_override("background", bg)
 	var fill := StyleBoxFlat.new()
 	fill.bg_color = Color(0.2, 0.8, 0.4, 1.0)
-	fill.set_corner_radius_all(4)
+	fill.set_corner_radius_all(0)
 	pb.add_theme_stylebox_override("fill", fill)
 
 static func _apply_separator_style(sep: Control) -> void:

@@ -16,7 +16,7 @@ func _ready() -> void:
 	_style = StyleBoxFlat.new()
 	_style.bg_color = Color(0.15, 0.15, 0.18, 0.85)
 	_style.set_border_width_all(1)
-	_style.set_corner_radius_all(3)
+	_style.set_corner_radius_all(0)
 	$Panel.add_theme_stylebox_override("panel", _style)
 	_timer_label.add_theme_color_override("font_shadow_color", Color.BLACK)
 	_timer_label.add_theme_constant_override("shadow_offset_x", 1)

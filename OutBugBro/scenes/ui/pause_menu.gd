@@ -31,18 +31,18 @@ func _input(event: InputEvent) -> void:
 
 func _show() -> void:
 	visible = true
-	get_tree().paused = true
-	UITheme.apply_iOS_style(_panel)
+	GameManager.pause()
 
 func _on_resume() -> void:
 	visible = false
-	get_tree().paused = false
+	GameManager.play()
 
 func _on_menu() -> void:
 	visible = false
-	get_tree().paused = false
-	SaveManager.reset_run()
-	CurrencyManager.currency = 0
+	GameManager.play()
+	# 先保存再退出
+	SaveManager.save_run()
+	GameManager.challenge_mode = false
 	GameManager.change_scene("res://scenes/main_menu.tscn")
 
 func _on_hover(btn: Button, entering: bool) -> void:

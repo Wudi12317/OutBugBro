@@ -25,8 +25,8 @@ func _process(_delta: float) -> void:
 
 
 func _build_ui() -> void:
-	var skills := SkillManager.get_skills()
-	var skill_count := maxi(skills.size(), 5)
+	var skills := SkillManager.get_visible_skills()
+	var skill_count := maxi(skills.size(), 2) if GameManager.challenge_mode else maxi(skills.size(), 5)
 	for i in range(skill_count):
 		var slot := _create_slot(i, true)
 		add_child(slot)
@@ -59,7 +59,7 @@ func _build_popup() -> void:
 	sty.bg_color = Color(0.08, 0.08, 0.12, 0.97)
 	sty.border_color = Color(0.5, 0.5, 0.65)
 	sty.set_border_width_all(2)
-	sty.set_corner_radius_all(8)
+	sty.set_corner_radius_all(0)
 	panel.add_theme_stylebox_override("panel", sty)
 	panel.name = "PopupBg"
 	_popup.add_child(panel)
@@ -250,6 +250,14 @@ func _open_item_popup(idx: int) -> void:
 	_popup.visible = true
 
 
+## ============ 技能快捷键标签 ============
+
+func _get_skill_key_labels() -> PackedStringArray:
+	if GameManager.challenge_mode:
+		return ["1", "Q"]
+	return ["1", "2", "3", "4", "5", "6", "7"]
+
+
 ## ============ 创建格子 ============
 
 func _create_slot(idx: int, is_skill: bool) -> Control:
@@ -264,7 +272,7 @@ func _create_slot(idx: int, is_skill: bool) -> Control:
 	style.bg_color = Color(0.15, 0.15, 0.18, 0.9)
 	style.border_color = Color(0.35, 0.35, 0.4)
 	style.set_border_width_all(2)
-	style.set_corner_radius_all(4)
+	style.set_corner_radius_all(0)
 	panel.add_theme_stylebox_override("panel", style)
 	slot.add_child(panel)
 	var icon := TextureRect.new()
@@ -324,7 +332,8 @@ func _create_slot(idx: int, is_skill: bool) -> Control:
 	key_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	key_label.z_index = 3
 	if is_skill:
-		key_label.text = str(idx + 1)
+		var skill_keys := _get_skill_key_labels()
+		key_label.text = skill_keys[idx] if idx < skill_keys.size() else str(idx + 1)
 	else:
 		var item_keys := ["8", "9", "0", "F1", "F2"]
 		key_label.text = item_keys[idx] if idx < item_keys.size() else "?"
@@ -374,7 +383,8 @@ class _CdFanNode extends Control:
 ## ============ 技能槽刷新 ============
 
 func _refresh() -> void:
-	var skills := SkillManager.get_skills()
+	var skills := SkillManager.get_visible_skills()
+	var skill_keys := _get_skill_key_labels()
 	for i in range(_skill_slots.size()):
 		var slot: Control = _skill_slots[i]
 		if i >= skills.size():
@@ -414,14 +424,14 @@ func _refresh() -> void:
 			style.bg_color = Color(0.12, 0.12, 0.16, 0.9)
 			style.border_color = Color(0.55, 0.55, 0.65)
 			btn.disabled = false
-			btn.tooltip_text = "%s (按%d)" % [data.skill_name, i + 1]
+			btn.tooltip_text = "%s (按%s)" % [data.skill_name, skill_keys[i] if i < skill_keys.size() else str(i + 1)]
 		panel.add_theme_stylebox_override("panel", style)
 
 
 ## ============ 每帧更新CD/激活显示 ============
 
 func _update_cd_display() -> void:
-	var skills := SkillManager.get_skills()
+	var skills := SkillManager.get_visible_skills()
 	for i in range(mini(_skill_slots.size(), skills.size())):
 		var slot: Control = _skill_slots[i]
 		var data: SkillData = skills[i]
@@ -576,6 +586,15 @@ func _input(event: InputEvent) -> void:
 			if event.keycode == KEY_1 + i:
 				_on_skill_left_click(i)
 				return
+		# Q 键激活 head_oil
+		if event.keycode == KEY_Q:
+			if GameManager.challenge_mode:
+				# 挑战模式：Q = 第2个技能槽（head_oil）
+				if _skill_slots.size() > 1:
+					_on_skill_left_click(1)
+			else:
+				SkillManager.activate_by_id("head_oil")
+			return
 		if event.keycode == KEY_8:
 			_use_consumable_at(0)
 			return

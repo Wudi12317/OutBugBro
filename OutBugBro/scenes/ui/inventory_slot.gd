@@ -19,7 +19,7 @@ func _ready() -> void:
 	_style.bg_color = Color(0.15, 0.15, 0.18, 0.9)
 	_style.border_color = Color(0.35, 0.35, 0.4)
 	_style.set_border_width_all(2)
-	_style.set_corner_radius_all(4)
+	_style.set_corner_radius_all(0)
 	_panel.add_theme_stylebox_override("panel", _style)
 	# 数量文字样式
 	_count_label.add_theme_color_override("font_shadow_color", Color.BLACK)

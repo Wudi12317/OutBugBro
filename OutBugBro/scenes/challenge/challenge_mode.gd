@@ -97,10 +97,11 @@ func _setup_player() -> void:
 	cam.position_smoothing_speed = 8.0
 	_player.add_child(cam)
 	await get_tree().process_frame
-	# 禁用所有技能（位移保留）
+	# 禁用所有技能（位移保留），然后自动解锁挑战模式允许的技能
 	SkillManager._purchased.clear()
 	SkillManager._active.clear()
 	SkillManager._cooldowns.clear()
+	SkillManager.auto_unlock_challenge_skills()
 	# 清空背包，放入 99 血包
 	InventoryManager.clear_all()
 	var health_potion: ItemData = load("res://data/items/health_potion.tres")
@@ -287,7 +288,7 @@ func _show_result(boss_killed: bool, score: float) -> void:
 	style.bg_color = Color(0.06, 0.06, 0.12, 0.95)
 	style.border_color = Color(0.4, 0.4, 0.6, 0.8)
 	style.set_border_width_all(2)
-	style.set_corner_radius_all(12)
+	style.set_corner_radius_all(0)
 	style.set_content_margin_all(24)
 	_result_panel.add_theme_stylebox_override("panel", style)
 	# 添加到 UILayer
@@ -350,6 +351,7 @@ func _show_result(boss_killed: bool, score: float) -> void:
 func _on_back_to_menu() -> void:
 	get_tree().paused = false
 	SaveManager.clear_runtime()
+	GameManager.challenge_mode = false
 	GameManager.state = GameManager.State.MENU
 	GameManager.change_scene("res://scenes/main_menu.tscn")
 
@@ -409,10 +411,10 @@ func _setup_ui() -> void:
 	_boss_hp_bar.custom_minimum_size = Vector2(400, 12)
 	var bg_style := StyleBoxFlat.new()
 	bg_style.bg_color = Color(0.2, 0.05, 0.05, 0.8)
-	bg_style.set_corner_radius_all(4)
+	bg_style.set_corner_radius_all(0)
 	var fill_style := StyleBoxFlat.new()
 	fill_style.bg_color = Color(0.85, 0.1, 0.1)
-	fill_style.set_corner_radius_all(4)
+	fill_style.set_corner_radius_all(0)
 	_boss_hp_bar.add_theme_stylebox_override("background", bg_style)
 	_boss_hp_bar.add_theme_stylebox_override("fill", fill_style)
 	boss_bar_vbox.add_child(_boss_hp_bar)
@@ -452,3 +454,9 @@ func _setup_ui() -> void:
 		inv.set_anchors_preset(Control.PRESET_FULL_RECT)
 		inv.visible = false  # 默认隐藏，按 B 打开
 		canvas.add_child(inv)
+	# ---- 暂停菜单（实例化 pause_menu.tscn） ----
+	var pause_scene: PackedScene = load("res://scenes/ui/pause_menu.tscn")
+	if pause_scene:
+		var pause_menu := pause_scene.instantiate()
+		pause_menu.set_anchors_preset(Control.PRESET_FULL_RECT)
+		canvas.add_child(pause_menu)

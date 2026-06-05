@@ -26,6 +26,8 @@ var _current_popup: String = ""  # "intro" / "about" / "dialog" / ""
 
 
 func _ready() -> void:
+	# 全屏
+	get_window().mode = Window.MODE_FULLSCREEN
 	# 高评分显示
 	_high_score.text = SaveManager.get_high_score_text()
 	# 继续游戏按钮（无存档时禁用）
@@ -166,6 +168,7 @@ func _on_continue_btn_pressed() -> void:
 	SaveManager.clear_runtime()  # 先清空再加载存档
 	SaveManager._pending_load = true
 	GameManager.state = GameManager.State.PLAYING
+	SkillManager.auto_unlock_challenge_skills()
 	GameManager.change_scene("res://scenes/main.tscn")
 
 
@@ -184,7 +187,9 @@ func _on_quit_btn_pressed() -> void:
 func _on_challenge_btn_pressed() -> void:
 	# 进入挑战模式
 	SaveManager.clear_runtime()
+	GameManager.challenge_mode = true
 	GameManager.state = GameManager.State.PLAYING
+	SkillManager.auto_unlock_challenge_skills()
 	GameManager.change_scene("res://scenes/challenge/challenge_mode.tscn")
 
 
@@ -204,6 +209,7 @@ func _on_overwrite_btn_pressed() -> void:
 	SaveManager.clear_runtime()
 	SaveManager._pending_load = true
 	GameManager.state = GameManager.State.PLAYING
+	SkillManager.auto_unlock_challenge_skills()
 	GameManager.change_scene("res://scenes/main.tscn")
 
 
@@ -219,6 +225,7 @@ func _on_cancel_btn_pressed() -> void:
 
 func _start_new_game() -> void:
 	GameManager.state = GameManager.State.PLAYING
+	SkillManager.auto_unlock_challenge_skills()
 	GameManager.change_scene("res://scenes/main.tscn")
 
 
@@ -228,7 +235,7 @@ func _apply_btn_style(btn: Button) -> void:
 	style.bg_color = Color(0.15, 0.15, 0.22, 0.8)
 	style.border_color = Color(0.35, 0.35, 0.5, 0.6)
 	style.set_border_width_all(1)
-	style.set_corner_radius_all(8)
+	style.set_corner_radius_all(0)
 	style.set_content_margin_all(8)
 	# hover
 	var hover := style.duplicate()
@@ -246,7 +253,7 @@ func _apply_main_btn_style(btn: Button) -> void:
 	style.bg_color = Color(0.12, 0.12, 0.18, 0.85)
 	style.border_color = Color(0.35, 0.35, 0.5, 0.6)
 	style.set_border_width_all(1)
-	style.set_corner_radius_all(10)
+	style.set_corner_radius_all(0)
 	style.set_content_margin_all(12)
 	var hover := style.duplicate()
 	hover.bg_color = Color(0.18, 0.18, 0.28, 0.95)
@@ -263,7 +270,7 @@ func _apply_dialog_style(panel: PanelContainer) -> void:
 	style.bg_color = Color(0.08, 0.08, 0.15, 0.92)
 	style.border_color = Color(0.3, 0.3, 0.5, 0.8)
 	style.set_border_width_all(2)
-	style.set_corner_radius_all(12)
+	style.set_corner_radius_all(0)
 	style.shadow_color = Color(0, 0, 0, 0.4)
 	style.shadow_offset = Vector2(0, 4)
 	style.shadow_size = 8
@@ -283,7 +290,7 @@ func _apply_challenge_btn_style(btn: Button) -> void:
 	style.bg_color = Color(0.15, 0.12, 0.05, 0.9)
 	style.border_color = Color(0.8, 0.7, 0.2, 0.8)
 	style.set_border_width_all(2)
-	style.set_corner_radius_all(10)
+	style.set_corner_radius_all(0)
 	style.set_content_margin_all(12)
 	var hover := style.duplicate()
 	hover.bg_color = Color(0.25, 0.2, 0.08, 0.95)
