@@ -1,6 +1,7 @@
 # 数据修改指南
 
-> **所有数值调整都在 .tres 文件中完成，无需修改代码！**
+> **大部分数值调整在 .tres 文件中完成。**
+> **⚠️ 掉落表目前为代码硬编码，新增物品后须同时修改 `scenes/enemies/enemy.gd` 的 `_build_default_drop_table()`。**
 > 在 Godot 编辑器中双击 .tres 文件，即可在 Inspector 面板中直接编辑。
 
 ---
@@ -101,20 +102,32 @@
 
 ---
 
-## 掉落表 `data/drop_tables/*.tres`
+## 掉落表 `scenes/enemies/enemy.gd:_build_default_drop_table()`
 
-### 默认掉落表
+> ⚠️ **注意**: 掉落表目前不是从 `.tres` 文件加载的，而是**硬编码在 `enemy.gd:240` 的 `_build_default_drop_table()` 函数中**。
+> `data/drop_tables/` 目录目前未被使用，新增物品必须手动修改该函数。
+
+### 当前掉落表（实际代码）
 
 | 物品 | 权重 | 概率 | 品质 |
 |------|------|------|------|
-| 铁矿石 | 50 | 38% | 普通(白) |
-| 生命药水 | 30 | 23% | 精良(绿) |
-| 古老硬币 | 25 | 19% | 精良(绿) |
-| 速度药剂 | 15 | 12% | 稀有(青) |
-| 力量药水 | 8 | 6% | 稀有(青) |
-| 铁壁药水 | 6 | 5% | 稀有(青) |
-| 魔法碎片 | 5 | 4% | 史诗(紫) |
-| 幸运符 | 2 | 2% | 史诗(紫) |
+| 铁矿石 | 35 | 22.9% | 普通(白) |
+| 生命药水 | 40 | 26.1% | 精良(绿) |
+| 古老硬币 | 30 | 19.6% | 精良(绿) |
+| 速度药剂 | 15 | 9.8% | 稀有(青) |
+| 力量药水 | 8 | 5.2% | 稀有(青) |
+| 铁壁药水 | 6 | 3.9% | 稀有(青) |
+| 魔法碎片 | 5 | 3.3% | 稀有(青) |
+| 幸运符 | 3 | 2.0% | 史诗(紫) |
+| 凤凰羽毛 | 2 | 1.3% | 史诗(紫) |
+| 龙之心 | 1 | 0.7% | 史诗(紫) |
+| 流星核心 | 2 | 1.3% | 史诗(紫) |
+| 卡斯特莉丝 | 0.5 | 0.3% | 史诗(紫) |
+
+### Boss 掉落（单独系统）
+> Boss 不使用上述掉落表，详见 `scenes/enemies/boss.gd:_drop_boss_loot()`
+> Boss 固定掉落 1~2 个红色物品（大虫之心/虫哥水晶/大虫精粹）+ 3~4 个金色物品（龙之心/凤凰羽毛/流星核心）
+> 新增物品不会出现在 Boss 掉落中，除非修改 `boss.gd`。
 
 ### 精英怪掉落规则
 - 10% 概率生成，HP×3，体型 1.5 倍
@@ -172,13 +185,14 @@
 
 ## 新增内容指南
 
-### 新增消耗品（零代码）
+### 新增消耗品
 
 1. 在 `data/effects/` 创建新效果 `.tres`（EffectData 资源）
 2. 在 `data/items/` 创建新物品 `.tres`（ConsumableItemData）
 3. 在 `assets/` 添加图标
 4. 在 `data/data_registry.tres` 中添加路径
-5. 在 `data/drop_tables/` 中添加 DropEntry
+5. ⚠️ **在 `scenes/enemies/enemy.gd:240` 的 `_build_default_drop_table()` 中添加掉落条目**（权重+路径）
+6. ⚠️ 如需 Boss 掉落，修改 `scenes/enemies/boss.gd` 的 `_create_gold_item()`
 
 ### 新增技能
 
@@ -196,7 +210,8 @@
 
 1. 创建 `data/effects/frost_shield.tres`：id=frost_shield, defense_change=20
 2. 创建 `data/items/frost_potion.tres`：ConsumableItemData, id=frost_potion, effect_ids=["frost_shield"]
-3. 在 `default_drop_table.tres` 添加 weight=10
+3. 在 `scenes/enemies/enemy.gd:242` 的 `items_and_weights` 数组中添加：
+   `{ "path": "res://data/items/frost_potion.tres", "weight": 10.0 }`
 
 ---
 

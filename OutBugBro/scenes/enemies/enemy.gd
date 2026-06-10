@@ -241,7 +241,7 @@ func _build_default_drop_table() -> DropTable:
 	var table := DropTable.new()
 	var items_and_weights: Array[Dictionary] = [
 		{ "path": "res://data/items/iron_ore.tres", "weight": 35.0 },
-		{ "path": "res://data/items/health_potion.tres", "weight": 40.0 },
+		{ "path": "res://data/items/health_potion.tres", "weight": 30.0 },
 		{ "path": "res://data/items/coin.tres", "weight": 30.0 },
 		{ "path": "res://data/items/speed_potion.tres", "weight": 15.0 },
 		{ "path": "res://data/items/power_potion.tres", "weight": 8.0 },
@@ -251,7 +251,9 @@ func _build_default_drop_table() -> DropTable:
 		{ "path": "res://data/items/dragon_heart.tres", "weight": 1.0 },
 		{ "path": "res://data/items/phoenix_feather.tres", "weight": 2.0 },
 		{ "path": "res://data/items/meteor_core.tres", "weight": 2.0 },
-		{ "path": "res://data/items/castorice.tres", "weight": 0.5 },
+		{ "path": "res://data/items/castorice.tres", "weight": 0.3 },
+		{ "path": "res://data/items/milkdad.tres", "weight": 2.0 },
+		{ "path": "res://data/items/castorice2.tres", "weight": 0.1 },
 	]
 	for iw in items_and_weights:
 		var item: ItemData = load(iw.path)

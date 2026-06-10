@@ -3,12 +3,12 @@
 extends Control
 
 const GAME_TITLE := "逃离虫哥"
-const DEV_NAME := "Castorice_rz"
+const DEV_NAME := "开发者：Castorice_rz (wudi)"
 
-const FADE_IN := 0.8    ## 文字缓入时长
-const FADE_OUT := 0.8    ## 文字缓出时长
-const HOLD_TITLE := 1.5  ## 游戏名停留
-const HOLD_DEV := 1.2    ## 开发者名停留
+const FADE_IN := 0.6    ## 文字缓入时长
+const FADE_OUT := 0.6    ## 文字缓出时长
+const HOLD_TITLE := 1.3  ## 游戏名停留
+const HOLD_DEV := 1.0    ## 开发者名停留
 const DEV_FADE_IN := 0.6
 const DEV_FADE_OUT := 0.6
 

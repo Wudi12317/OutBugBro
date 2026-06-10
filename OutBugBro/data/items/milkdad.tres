@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MaterialItemData" load_steps=3 format=3 uid="uid://b324l3hx6ihxy"]
+
+[ext_resource type="Texture2D" uid="uid://dx32d8uj5fkqu" path="res://assets/sprites/items/milkdad.png" id="1_7qxd1"]
+[ext_resource type="Script" uid="uid://7p8pbircrjt5" path="res://core/base/material_item_data.gd" id="2_tlqrx"]
+
+[resource]
+script = ExtResource("2_tlqrx")
+id = "milkdad"
+name = "奶爸"
+icon = ExtResource("1_7qxd1")
+desc = "奶到我了"
+rarity = 4
+value = 4444

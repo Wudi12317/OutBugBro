@@ -4,10 +4,10 @@
 class_name ChallengeMode
 extends Node2D
 
-const BOSS_LEVEL: int = 222
+const BOSS_LEVEL: int = 999
 const TIME_LIMIT: float = 300.0
 const HEALTH_PACK_COUNT: int = 99
-const DROP_CHANCE: float = 0.03
+const DROP_CHANCE: float = 0.06
 
 var _time_remaining: float = TIME_LIMIT
 var _damage_dealt: int = 0
@@ -399,7 +399,7 @@ func _setup_ui() -> void:
 	boss_bar_vbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	canvas.add_child(boss_bar_vbox)
 	_boss_name_label = Label.new()
-	_boss_name_label.text = "★大虫 Lv.222"
+	_boss_name_label.text = "★大虫 Lv.999"
 	_boss_name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_boss_name_label.add_theme_font_size_override("font_size", 14)
 	_boss_name_label.add_theme_color_override("font_color", Color(1.0, 0.3, 0.3))

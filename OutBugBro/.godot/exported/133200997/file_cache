@@ -57,9 +57,12 @@ res://scenes/enemies/boss.tscn::c53ffaea2d94ca215bc3a816e1e42dbb::1780926567::re
 res://scenes/enemies/ranged_enemy.tscn::02c9bb1b19d179934c7265ac6e68f089::1779977438::res://.godot/exported/133200997/export-a9df08e9d4d0f50080251c4f563bb59d-ranged_enemy.scn
 res://scenes/enemies/tank_enemy.tscn::62942ca95b6571e950427434a8784921::1779977438::res://.godot/exported/133200997/export-9d77d5c67b3054dd7af8f921a9fda354-tank_enemy.scn
 res://scenes/ui/boss_hp_bar.tscn::a58a9a520bbf191f88bc5d01f54da43a::1779977438::res://.godot/exported/133200997/export-12d46977a844470c6e5f6ce2c5ea9469-boss_hp_bar.scn
-res://scenes/ui/game_hud.tscn::7446f6e15b59afb6652d57b13b9ace91::1780926771::res://.godot/exported/133200997/export-60030ad639890a3d8c4bad3ffdd69de9-game_hud.scn
+res://scenes/ui/game_hud.tscn::7446f6e15b59afb6652d57b13b9ace91::1781100124::res://.godot/exported/133200997/export-60030ad639890a3d8c4bad3ffdd69de9-game_hud.scn
 res://scenes/ui/meta_upgrades.tscn::cdd84e87ef9277f7272a4ad5ef061227::1779977438::res://.godot/exported/133200997/export-173e4b16cd55d0ea05c9f7f37907a9d7-meta_upgrades.scn
 res://scenes/ui/target_hp_bar.tscn::26993ae34d3cdf21db22083238ac3e41::1779977438::res://.godot/exported/133200997/export-3f431a08c9a23daa557340ee86174cbb-target_hp_bar.scn
 res://scenes/ui/tutorial_overlay.tscn::257f5fbe9cfc2cecbc2f0f1d6b831c2e::1779977438::res://.godot/exported/133200997/export-4673cc1af344105817a131d82f1672c9-tutorial_overlay.scn
 res://scenes/world/enemy_bullet.tscn::5165cd65ebc361c6b5431841bdba0f05::1779977438::res://.godot/exported/133200997/export-83418c022c3241600896ceef445b9bca-enemy_bullet.scn
 res://scenes/world/game_world.tscn::3ad6b02a22ce10b46517186f44e73c7b::1779977438::res://.godot/exported/133200997/export-ec88c4044e6a8913bb715de9fd89d93c-game_world.scn
+res://data/items/milkdad.tres::de5b527efdddb4328465aa6723276cc3::1781100033::res://.godot/exported/133200997/export-16dcc7a02b033361b0c4592eba615b1c-milkdad.res
+res://data/items/castorice2.tres::20bd59d9ef38188d2a9dcbef19156c1f::1781100033::res://.godot/exported/133200997/export-9108034bde0953e6cb0878a32986b27c-castorice2.res
+res://scenes/splash_screen.tscn::12eeccc8bbd5398aa59f4d3fd9f43cbe::1781068554::res://.godot/exported/133200997/export-012677d704e3d1ec9701ea04a5d91151-splash_screen.scn

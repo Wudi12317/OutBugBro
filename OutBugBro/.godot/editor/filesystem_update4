@@ -1,2 +1,6 @@
-res://scenes/main_menu.gd
 res://scenes/splash_screen.gd
+res://scenes/challenge/challenge_mode.gd
+res://scenes/ui/game_hud.tscn
+res://data/items/milkdad.tres
+res://data/items/castorice2.tres
+res://scenes/enemies/enemy.gd

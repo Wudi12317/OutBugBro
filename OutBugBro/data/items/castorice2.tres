@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MaterialItemData" load_steps=3 format=3 uid="uid://dx5jum37o1ll6"]
+
+[ext_resource type="Texture2D" uid="uid://05hf8sgff4d2" path="res://assets/sprites/items/castorice2.jpg" id="1_5nc8p"]
+[ext_resource type="Script" uid="uid://7p8pbircrjt5" path="res://core/base/material_item_data.gd" id="2_kxs3i"]
+
+[resource]
+script = ExtResource("2_kxs3i")
+id = "castorice2"
+name = "遐蝶（？）"
+icon = ExtResource("1_5nc8p")
+rarity = 5
+value = 11111
