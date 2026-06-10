@@ -20,7 +20,8 @@ corner_radius_bottom_left = 2
 [sub_resource type="CircleShape2D" id="5"]
 radius = 35.0
 
-[node name="Boss" type="CharacterBody2D" groups=["enemies", "bosses"]]
+[node name="Boss" type="CharacterBody2D" groups=["bosses", "enemies"]]
+scale = Vector2(2.56, 2.56)
 collision_layer = 2
 script = ExtResource("1")
 
@@ -46,11 +47,12 @@ value = 100.0
 show_percentage = false
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(3.90625, 5.078125)
+scale = Vector2(0.7500001, 0.88765204)
 shape = SubResource("5")
 
 [node name="Body" type="Sprite2D" parent="."]
+modulate = Color(0.9, 0.1, 0.1, 1)
 position = Vector2(0, -2)
 scale = Vector2(0.3, 0.28)
 texture = ExtResource("2")
-modulate = Color(0.9, 0.1, 0.1, 1)

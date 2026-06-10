@@ -3,7 +3,7 @@
 ## 挂到 UILayer 下，代码构建 UI
 extends Control
 
-const DEVPASS := "castorice"
+const DEVPASS := "castorice_rz"
 
 var _unlocked: bool = false
 var _input_text: String = ""

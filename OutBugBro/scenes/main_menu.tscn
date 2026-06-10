@@ -127,7 +127,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.9, 0.95, 1, 1)
 theme_override_font_sizes/font_size = 22
-text = "📖  介绍（不看是给）"
+text = "📖  介绍（点击查看更新内容）"
 
 [node name="AboutBtn" type="Button" parent="Center/VBox/BtnVBox"]
 unique_name_in_owner = true
@@ -151,7 +151,7 @@ text = "🚪  退出游戏"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4, 0.4, 0.5, 1)
 theme_override_font_sizes/font_size = 12
-text = "v0.1.13
+text = "v0.2.10
 "
 horizontal_alignment = 1
 
@@ -256,21 +256,16 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
 theme_override_font_sizes/font_size = 15
 text = "逃离虫哥🥵🥵🥵
-v0.1.13
+v0.2.10
 -------------------------------------------------
 【本次更新】
-加入了强大的Boss:大虫
-修复了一些物品的使用bug
-修复了物品栏丢失bug
+加入了挑战模式
+优化了一些体验
+修改了一些逻辑
+修复了已知bug
 ---------------------------------------------------
-游戏背景：虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡
-----------------------------------------------------
-【shift】切换射击模式
-【B】开启/关闭背包
-【ESC】暂停
-【手动模式】：左键/右键射击，单点，可长按蓄力🤓🤓
-【自动模式】：自动射击，无需手动
-【数字键】使用技能/消耗品（也可以点击）
+虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡虫哥😡
+
 
 "
 autowrap_mode = 2
@@ -312,17 +307,10 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
 theme_override_font_sizes/font_size = 15
-text = "游戏版本：v0.1.13
-使用引擎：Godot4.5.1
+text = "游戏版本：v0.2.10
+使用引擎：Godot 4.5.1
 开发者：@遐蝶rz（也就是wd）
 感谢______的赞助（0个人赞助我😡😡😡）
-
-感谢hgr提供的虫哥照片
-感谢chy提供的whb照片
-感谢不知道哪来的chy照片
-感谢其他人提供的一些照片
-
-后期有小概率卡顿🥵🥵🥵
 
 可以向 
 bilibili@遐蝶rz

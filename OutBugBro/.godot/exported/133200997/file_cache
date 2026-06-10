@@ -45,7 +45,7 @@ res://scenes/world/bullet.tscn::6eae618b437800f0533bd9a72e14983e::1779977438::re
 res://scenes/world/drop_indicator.tscn::f4fd4808b473c42cb83214eb38678711::1779977438::res://.godot/exported/133200997/export-d3bf29765ea65ab8d4a3750808f5b17f-drop_indicator.scn
 res://scenes/world/target.tscn::fa87438cabba5b33ff290ed22691af4c::1779977438::res://.godot/exported/133200997/export-acdcd8fe96eef4614b96d0b353bbf791-target.scn
 res://scenes/main.tscn::092d405a05dcef956d2daffa16cf2dbd::1779977438::res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
-res://scenes/main_menu.tscn::a487513499f0c2853ea963a4ebbac7a5::1779977438::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
+res://scenes/main_menu.tscn::9db060e8f37ebb9fa96f7e996937ae82::1780926282::res://.godot/exported/133200997/export-ea5c6ad4629af728dc514cefde332394-main_menu.scn
 res://data/effects/boss_essence.tres::d311767692721896afdceaac3f446755::1779977438::res://.godot/exported/133200997/export-d982a7f4449e6942556f4f95822b29c4-boss_essence.res
 res://data/items/dragon_heart.tres::a4f6c6e7f9bb9b2bd3020bbff9a1c3b2::1779977438::res://.godot/exported/133200997/export-bac7a7a3d6453d7fb69dab4c1ac19bcb-dragon_heart.res
 res://data/data_registry.tres::8a6bd890f3e820021af23f99402dd131::1779977438::res://.godot/exported/133200997/export-cb2fc6edc949e1f8178cdd3245d4f22f-data_registry.res
@@ -53,11 +53,11 @@ res://scenes/enemies/fast_enemy.tscn::815b8a242afe998c63fa553d5455ee55::17799774
 res://scenes/world/explosion_effect.tscn::5924f90bce953f0391073800a7ad5626::1779977438::res://.godot/exported/133200997/export-89c1864f35ee4162cc2a7dc25d93ac16-explosion_effect.scn
 res://addons/godot_mcp/ui/mcp_panel.tscn::d1c7ecbcce69671264c650be6231df81::1779977438::res://.godot/exported/133200997/export-03dfab4f1d15e435dabb9faf8f037ca7-mcp_panel.scn
 res://scenes/challenge/challenge_mode.tscn::7156def681d58168a31756ef6a639fa9::1779977438::res://.godot/exported/133200997/export-8652c901bcad94fd99a2655c45aa57c5-challenge_mode.scn
-res://scenes/enemies/boss.tscn::1862d5000bd2d22fc3e51e3e7c781e35::1779977438::res://.godot/exported/133200997/export-bac1be33aabab0efc5915361999d27d1-boss.scn
+res://scenes/enemies/boss.tscn::c53ffaea2d94ca215bc3a816e1e42dbb::1780926567::res://.godot/exported/133200997/export-bac1be33aabab0efc5915361999d27d1-boss.scn
 res://scenes/enemies/ranged_enemy.tscn::02c9bb1b19d179934c7265ac6e68f089::1779977438::res://.godot/exported/133200997/export-a9df08e9d4d0f50080251c4f563bb59d-ranged_enemy.scn
 res://scenes/enemies/tank_enemy.tscn::62942ca95b6571e950427434a8784921::1779977438::res://.godot/exported/133200997/export-9d77d5c67b3054dd7af8f921a9fda354-tank_enemy.scn
 res://scenes/ui/boss_hp_bar.tscn::a58a9a520bbf191f88bc5d01f54da43a::1779977438::res://.godot/exported/133200997/export-12d46977a844470c6e5f6ce2c5ea9469-boss_hp_bar.scn
-res://scenes/ui/game_hud.tscn::6de3fd824ba2567a0d09de00fdf7c48b::1779977438::res://.godot/exported/133200997/export-60030ad639890a3d8c4bad3ffdd69de9-game_hud.scn
+res://scenes/ui/game_hud.tscn::7446f6e15b59afb6652d57b13b9ace91::1780926771::res://.godot/exported/133200997/export-60030ad639890a3d8c4bad3ffdd69de9-game_hud.scn
 res://scenes/ui/meta_upgrades.tscn::cdd84e87ef9277f7272a4ad5ef061227::1779977438::res://.godot/exported/133200997/export-173e4b16cd55d0ea05c9f7f37907a9d7-meta_upgrades.scn
 res://scenes/ui/target_hp_bar.tscn::26993ae34d3cdf21db22083238ac3e41::1779977438::res://.godot/exported/133200997/export-3f431a08c9a23daa557340ee86174cbb-target_hp_bar.scn
 res://scenes/ui/tutorial_overlay.tscn::257f5fbe9cfc2cecbc2f0f1d6b831c2e::1779977438::res://.godot/exported/133200997/export-4673cc1af344105817a131d82f1672c9-tutorial_overlay.scn

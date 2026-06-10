@@ -180,9 +180,9 @@ func _try_shoot() -> void:
 	var target: Node2D = targets[0]
 	var dir := (target.global_position - global_position).normalized()
 	# 三发散射
-	for offset in [-0.15, 0.0, 0.15]:
+	for offset in [-0.15,-0.10,-0.05, 0.0, 0.05,0.10,0.15]:
 		var bdir := dir.rotated(offset)
-		var bullet := EnemyBullet.create(global_position, bdir, wave_config.get_enemy_atk(level) * 3)
+		var bullet := EnemyBullet.create(global_position, bdir, wave_config.get_enemy_atk(level) * 5)
 		get_parent().add_child(bullet)
 
 ## ============ 技能 ============
